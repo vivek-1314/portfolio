@@ -1,7 +1,6 @@
 'use client'
 import { relative } from "path";
 import { use, useEffect, useRef , useState } from "react";
-import ThreeJSScene from "@/components/threejsscene";
 import Lenis from '@studio-freight/lenis'
 import HorizontalScroll from "@/components/horizontalscroll";
 
