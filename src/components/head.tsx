@@ -1,6 +1,19 @@
 import Head from 'next/head';
 
 export default function SEO() {
+    const schemaData = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Vivek Gaindhar",
+    "url": "https://portfolio-dun-nine-30.vercel.app/",
+    "sameAs": [
+      "https://github.com/vivek-gaindhar",
+      "https://linkedin.com/in/vivek-gaindhar"
+    ],
+    "jobTitle": "Fullstack Developer & AI Technologist",
+    "description": "Portfolio of Vivek Gaindhar, an out-of-the-box thinker building real-world impact through software and AI innovation."
+  };
+
   return (
     <Head>
       <title>Vivek Gaindhar | Fullstack Developer & AI Technologist</title>
@@ -22,6 +35,10 @@ export default function SEO() {
       <meta property="og:image" content="https://portfolio-dun-nine-30.vercel.app/og-image.png" />
 
       <link rel="canonical" href="https://portfolio-dun-nine-30.vercel.app/" />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+      />
     </Head>
   );
 }
