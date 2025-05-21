@@ -33,6 +33,7 @@ export default function SEO() {
       <meta property="og:type" content="website" />
       <meta property="og:url" content="https://portfolio-dun-nine-30.vercel.app/" />
       <meta property="og:image" content="https://portfolio-dun-nine-30.vercel.app/og-image.png" />
+      <meta name="google-site-verification" content="H4dxpfXKyBbPYuVq_KUqJ5ev8zF-Dd-oTjqhTu3BaAg" />
 
       <link rel="canonical" href="https://portfolio-dun-nine-30.vercel.app/" />
       <script
