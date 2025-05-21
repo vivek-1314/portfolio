@@ -115,7 +115,9 @@ export default function Home() {
           </section>
         </div>
         <div className="sm:w-1/2 w-full h-full overflow-hidden">
-          <video  ref={videoRef} className="w-full h-full bg-cover" src="/videos/communication.webm" muted></video>
+          <video  ref={videoRef} className="w-full h-full bg-cover" src="/videos/communication.webm" 
+  muted
+  playsInline></video>
         </div>
       </section>
 

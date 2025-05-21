@@ -75,7 +75,7 @@ export default function HorizontalScroll() {
             {array.map((item, index) => {
               if (index === 0) {
                 return (
-                  <div className="panel w-screen h-screen flex sm:flex-row flex-col gap-6">
+                  <div key={index} className="panel w-screen h-screen flex sm:flex-row flex-col gap-6">
                     <div className="sm:w-1/2 w-full sm:h-full h-1/2  sm:py-10">
                       <img src="/images/rocket.webp" className="h-full w-full overflow-hidden ml-20" alt="" />
                     </div>
