@@ -1,5 +1,6 @@
+'use client'
 import './globals.css'
-import { ReactNode } from 'react';
+import { ReactNode , useEffect } from 'react';
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   const schemaData = {
@@ -34,7 +35,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://portfolio-dun-nine-30.vercel.app/" />
-        <meta property="og:image" content="https://portfolio-dun-nine-30.vercel.app/og-image.png" />
+        <meta property="c:\Users\vivek\OneDrive\Desktop\projects\vynkog:image" content="https://portfolio-dun-nine-30.vercel.app/og-image.png" />
         <meta name="google-site-verification" content="H4dxpfXKyBbPYuVq_KUqJ5ev8zF-Dd-oTjqhTu3BaAg" />
 
         <link rel="canonical" href="https://portfolio-dun-nine-30.vercel.app/" />

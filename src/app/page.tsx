@@ -1,13 +1,31 @@
 'use client'
-import { relative } from "path";
-import { use, useEffect, useRef , useState } from "react";
+
+import { useEffect } from 'react';
+import {useRef , useState } from "react";
 import Lenis from '@studio-freight/lenis'
 import HorizontalScroll from "@/components/horizontalscroll";
+import  Three3D  from "@/components/three3d";
 
 export default function Home() {
 
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [forward, setForward] = useState(true);
+  const [forward, setForward] = useState(true); 
+  const scrollRef = useRef(null);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      import('locomotive-scroll').then((LocomotiveScroll) => {
+        const scroll = new LocomotiveScroll.default({
+          el: scrollRef.current!,
+          smooth: true,
+        });
+
+        return () => {
+          scroll.destroy();
+        };
+      });
+    }
+  }, []);
 
   useEffect(() => {
     const video = videoRef.current;
@@ -51,15 +69,18 @@ export default function Home() {
     }
   }, [])
 
+
   return (
-    <main className="w-full bg-[#d4d5d5] hide-scrollbar overflow-x-hidden">
-      <section className="relative h-[100vh] w-full flex flex-col bg-cover justify-between px-14 py-20" style={{ backgroundImage: "url('/images/bkgimg.webp')" }}>
+    <main className="w-full h-full bg-[#d4d5d5] overflow-hidden relative">
+      <section ref={scrollRef} data-scroll-container className="relative h-full w-full flex flex-col bg-cover justify-between px-14 py-10 overflow-hidden" style={{ backgroundImage: "url('/images/bkgimg.webp')" }}>
+        <div data-scroll data-scroll-speed="-5" className="z-10 h-[100vh] absolute w-full top-[4rem] left-0 overflow-hidden">
+          <Three3D />
+        </div>
         <header className="w-full">
-        <div className="h-9 w-10 flex justify-between gap-2">
+        <div className="h-8 w-10 flex justify-between gap-2">
           {
             [1, 2, 3].map((item) => (
               <div key={item} className={`h-full w-1/3 bg-[#707070] ${item===1 ? 'relative -top-4' : ''} `}>
-                
               </div>
             ))
           }
@@ -68,17 +89,17 @@ export default function Home() {
       </header>
       
       {/* hero section */}
-      <div className="w-full flex flex-col justify-between items-center lg:gap-0 gap-5 ">
+      <div className="w-full flex flex-col justify-between items-center lg:gap-0 gap-5 mb-6">
         {
           ["DEVELOPER","MVP-EXPERT" , "WEBDESIGNER" ,  "FRONT-END"].map((item , idx) => {
             return (
-              <span key={idx} className="lg:text-[7.5rem] text-[2.5rem] leading-10 font-barlow font-bold lg:leading-25 text-[#979797]">{item}</span>
+              <span key={idx} className="lg:text-[7.5rem] text-[2.5rem] font-barlow font-bold leading-none text-[#979797]">{item}</span>
             )
           })
         }
       </div>
 
-      <div className="sm:mt-8 w-full flex sm:justify-center justify-between items-center sm:gap-26 gap-4 opacity-50">
+      <div className="sm:mt-4 w-full flex sm:justify-center justify-between items-center sm:gap-26 gap-4 opacity-50">
         <a href="https://www.linkedin.com/in/vivekgaindhar" target="_blank" rel="noopener noreferrer" className="h-9 w-9 rounded-full overflow-hidden">
           <img className="w-full h-full bg-cover" src="/icons/linkedin.png" alt="" />
         </a>
@@ -116,7 +137,6 @@ export default function Home() {
         </div>
         <div className="sm:w-1/2 w-full h-full overflow-hidden">
           <video  ref={videoRef} className="w-full h-full bg-cover" src="/videos/communication.webm" 
-  muted
   playsInline></video>
         </div>
       </section>
@@ -141,8 +161,8 @@ export default function Home() {
             <h3 className="font-barlow-Extrabold font-bold text-[1.3rem] text-[#7D7D7D] text-lg capitalize">Let’s craft the future </h3>
             <h6 className="font-barlow-regular text-justify text-[1rem] text-[#7D7D7D]">This is more than code — it’s a reflection of thought, time, and belief.</h6>
             <p className="font-barlow-regular text-justify text-[1rem] text-[#7D7D7D]">Driven by curiosity, fueled by creativity, and built for impact.</p>
-            <p className="font-barlow-regular text-justify text-[1rem] text-[#7D7D7D] mt-4">+91 8817358864</p>
-            <p className="font-barlow-regular text-justify text-[1rem] text-[#7D7D7D]">Contact: vivek1314gurjar@gmail.com</p>
+            <a className="font-barlow-regular text-justify text-[1rem] text-[#7D7D7D] mt-4">+91 8817358864</a>
+            <a className="font-barlow-regular text-justify text-[1rem] text-[#7D7D7D]">Contact: vivek1314gurjar@gmail.com</a>
           </div>
           <div className="h-full w-80 flex flex-col justify-end items-end pt-6">
             <p className="font-barlow text-justify text-[2.4rem] leading-10 text-[#7D7D7D]">Think Fast.</p>

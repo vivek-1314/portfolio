@@ -1,16 +1,35 @@
-import { dirname } from "path";
-import { fileURLToPath } from "url";
-import { FlatCompat } from "@eslint/eslintrc";
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-});
+import eslintPluginReact from 'eslint-plugin-react';
+import compat from 'eslint-config-flatCompat';
 
 const eslintConfig = [
-  ...compat.extends("next/core-web-vitals", "next/typescript"),
+  // Spread Next.js and TypeScript compatibility configs
+  ...compat.extends('next/core-web-vitals', 'next/typescript'),
+
+  // Your custom config for react-three-fiber
+  {
+    plugins: {
+      react: eslintPluginReact,
+    },
+    rules: {
+      'react/jsx-pascal-case': [
+        'error',
+        {
+          allowAllCaps: true,
+          ignore: [
+            'ambientLight',
+            'pointLight',
+            'directionalLight',
+            'spotLight',
+            'mesh',
+            'meshStandardMaterial',
+            'boxGeometry',
+            'sphereGeometry',
+            'group',
+          ],
+        },
+      ],
+    },
+  },
 ];
 
 export default eslintConfig;
