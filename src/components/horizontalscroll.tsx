@@ -55,27 +55,20 @@ export default function HorizontalScroll() {
     ];
 
     useEffect(() => {
-  const container = containerRef.current;
-  const sections = gsap.utils.toArray(".panel");
+    const container = containerRef.current;
+    const sections = gsap.utils.toArray(".panel"); 
 
-  gsap.to(sections, {
-    xPercent: -100 * (sections.length - 1),
-    ease: "power1.inOut",
-    scrollTrigger: {
-      trigger: container,
-      pin: true,
-      scrub: 0.3,
-      end: () => "+=" + container!.offsetWidth,
-      snap: {
-        snapTo: 1 / (sections.length - 1), // divides scroll into panels
-        duration: { min: 0.2, max: 0.5 },  // smooth jump duration
-        ease: "power1.inOut",
-        directional: true                 // ensures it snaps forward/back based on scroll direction
-      }
-    }
-  });
-}, []);
-
+    gsap.to(sections, {
+      xPercent: -100 * (sections.length - 1),
+      ease: "power1.out",
+      scrollTrigger: {
+        trigger: container,
+        pin: true,
+        scrub: 0.4,
+        end: () => "+=" + container!.offsetWidth,
+      },
+    });
+  }, []);
 
     return (
         <div ref={containerRef} className="flex h-screen w-[500vw]  bg-[#d4d5d5] hide-scrollbar">
