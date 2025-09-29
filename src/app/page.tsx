@@ -161,8 +161,8 @@ export default function Home() {
             <h3 className="font-barlow-Extrabold font-bold text-[1.3rem] text-[#7D7D7D] text-lg capitalize">Let’s craft the future </h3>
             <h6 className="font-barlow-regular text-justify text-[1rem] text-[#7D7D7D]">This is more than code — it’s a reflection of thought, time, and belief.</h6>
             <p className="font-barlow-regular text-justify text-[1rem] text-[#7D7D7D]">Driven by curiosity, fueled by creativity, and built for impact.</p>
-            <a className="font-barlow-regular text-justify text-[1rem] text-[#7D7D7D] mt-4">+91 8817358864</a>
-            <a className="font-barlow-regular text-justify text-[1rem] text-[#7D7D7D]">Contact: vivek1314gurjar@gmail.com</a>
+            <a href="tel:+918817358864" className="bg-[#1b72d1] px-3 rounded-full max-w-36 font-barlow-regular text-justify text-[1rem] text-white mt-4">+91 8817358864</a>
+            <a href="mailto:vivek1314gurjar@gmail.com" className="bg-[#1b72d1] px-3 rounded-xl font-barlow-regular text-justify text-[1rem] text-white mt-2 max-w-70">Contact: vivek1314gurjar@gmail.com</a>
           </div>
           <div className="h-full w-80 flex flex-col justify-end items-end pt-6">
             <p className="font-barlow text-justify text-[2.4rem] leading-10 text-[#7D7D7D]">Think Fast.</p>

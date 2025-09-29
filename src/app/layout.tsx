@@ -44,7 +44,12 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
         />
       </head>
-      <body>
+      <body className="relative">
+        <button className="h-[2.2rem] hover:scale-110 transition-all duration-250 ease-in-out text-sm flex justify-center text-white font-barlow-thin items-center bg-[#1b72e8]  w-30 z-100 rounded-full fixed top-4 right-4">
+          <a href="https://wa.me/918817358864" target="_blank" className="px-4 flex gap-2 items-center">
+            Connect
+          </a>
+        </button>
         {children}
       </body>
     </html>

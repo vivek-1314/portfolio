@@ -97,13 +97,13 @@ export default function HorizontalScroll() {
                         <div className="text-sm  font-barlow-thin flex flex-wrap gap-2 max-w-110 text-[#363434] ">{
                           (item.techstack)?.map((val,index) => {
                             return (
-                              <span key={index} className="text-sm border-1 px-3 rounded-xl py-[0.1rem] font-barlow-thin text-[#363434] max-w-110">{val}</span>
+                              <span key={index} className="text-sm hover:bg-[#E2C77A]  transition-all duration-200 ease-in-out border-1 px-3 rounded-xl py-[0.1rem] font-barlow-thin text-[#363434] max-w-110">{val}</span>
                             )
                           })
                           }</div></section>
                         <div className="flex gap-4">
-                            <a href={item.link} className="text-[#3A59D1] underline font-barlow-thin text-lg">Live Demo</a>
-                            <a href={item.githubrepo} className="text-[#3A59D1] underline font-barlow-thin text-lg">GitHub Repo</a>
+                            <a href={item.link} className="text-[#3A59D1] border-1 hover:scale-110 border-[#3A59D1] hover:bg-[#3A59D1] hover:text-white transition-all duration-200 ease-in-out px-3 py-1 rounded-full font-barlow-regular text-sm flex justify-center items-center">Live Demo</a>
+                            <a href={item.githubrepo} className="text-[#3A59D1] border-1 hover:scale-110 border-[#3A59D1] hover:bg-[#3A59D1] hover:text-white transition-all duration-200 ease-in-out px-3 py-1 rounded-full font-barlow-regular text-sm flex justify-center items-center">GitHub Repo</a>
                         </div>
                     </div>
                 </div>);
