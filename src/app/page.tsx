@@ -1,31 +1,34 @@
-'use client'
+"use client"; // make this file client-side
 
+
+import dynamic from "next/dynamic";
 import { useEffect } from 'react';
 import {useRef , useState } from "react";
 import Lenis from '@studio-freight/lenis'
 import HorizontalScroll from "@/components/horizontalscroll";
 import  Three3D  from "@/components/three3d";
+import "locomotive-scroll/dist/locomotive-scroll.css";
+
 
 export default function Home() {
 
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const [forward, setForward] = useState(true); 
-  const scrollRef = useRef(null);
+  const scrollRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      import('locomotive-scroll').then((LocomotiveScroll) => {
-        const scroll = new LocomotiveScroll.default({
-          el: scrollRef.current!,
+    // import LocomotiveScroll dynamically inside useEffect
+    import("locomotive-scroll").then((LocomotiveModule) => {
+      const LocomotiveScroll = LocomotiveModule.default; // get default export
+      if (scrollRef.current) {
+        new LocomotiveScroll({
+          el: scrollRef.current,
           smooth: true,
         });
-
-        return () => {
-          scroll.destroy();
-        };
-      });
-    }
+      }
+    });
   }, []);
+
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [forward, setForward] = useState(true); 
 
   useEffect(() => {
     const video = videoRef.current;
@@ -71,9 +74,9 @@ export default function Home() {
 
 
   return (
-    <main className="w-full h-full bg-[#d4d5d5] overflow-hidden relative">
-      <section ref={scrollRef} data-scroll-container className="relative h-full w-full flex flex-col bg-cover justify-between px-14 py-10 overflow-hidden" style={{ backgroundImage: "url('/images/bkgimg.webp')" }}>
-        <div data-scroll data-scroll-speed="-5" className="z-10 h-[100vh] absolute w-full top-[4rem] left-0 overflow-hidden">
+    <main ref={scrollRef} data-scroll-container className="w-full h-full bg-[#d4d5d5] overflow-hidden relative">
+      <section className="relative h-full w-full flex flex-col bg-cover justify-between px-14 py-10 " style={{ backgroundImage: "url('/images/bkgimg.webp')" }}>
+        <div data-scroll-section data-scroll data-scroll-speed="-2.3" className="z-20 h-[100vh] absolute w-full top-[4rem] left-0 ">
           <Three3D />
         </div>
         <header className="w-full">
@@ -86,7 +89,7 @@ export default function Home() {
           }
         </div>
 
-      </header>
+        </header>
       
       {/* hero section */}
       <div className="w-full flex flex-col justify-between items-center lg:gap-0 gap-5 mb-6">
@@ -115,7 +118,7 @@ export default function Home() {
       </div>
       </section>
 
-      <section className="w-full h-[100vh] flex sm:flex-row flex-col justify-center  items-center gap-2 sm:px-14 px-2 py-2 sm:py-10">
+      <section className="bg-[#d4d5d5] -z-10 w-full h-[100vh] flex sm:flex-row flex-col justify-center  items-center gap-2 sm:px-14 px-2 py-2 sm:py-10">
         <div className="sm:w-1/2 w-full h-full flex flex-col justify-center sm:items-start items-center pt-8 sm:pl-14 gap-8  sm:gap-9">
           <section>
             <h2 className="text-4xl font-barlow-regular font-bold text-[#7D7D7D]"><span className="text-[#D4B156]">Crafting</span> Tomorrow’s</h2>
@@ -141,7 +144,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section>
+      <section className="bg-red-300" >
         <HorizontalScroll />
       </section>
 
