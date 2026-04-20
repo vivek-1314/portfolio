@@ -203,3 +203,18 @@ body {
   font-family: 'mont-med';
   src: url('/font/Montserrat-Medium.ttf') format('truetype');
 }
+
+@font-face {
+  font-family: 'anton-reg';
+  src: url('/font/Anton-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'impact';
+  src: url('/font/impact.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'impacted';
+  src: url('/font/Impacted.ttf') format('truetype');
+}
+

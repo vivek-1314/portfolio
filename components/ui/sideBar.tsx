@@ -14,11 +14,12 @@ export default function SideBar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="md:hidden relative">
+    <div className="md:hidden relative z-20">
       
       {/* Toggle Button */}
       <button
-        onClick={() => setIsOpen(!isOpen)}
+        onTouchStart={() => alert("touched!")}
+        onClick={() => { setIsOpen(!isOpen); alert("clicked!"); }}
         className="h-10 w-10 bg-gray-200 rounded-lg flex items-center justify-center shadow-2xl"
       >
         ☰
@@ -26,7 +27,7 @@ export default function SideBar() {
 
       {/* Sidebar */}
       <div
-        className={`absolute top-0 -left-10 w-50 bg-white shadow-2xl rounded-xl p-4 transition-transform duration-300 ease-in-out
+        className={`z-20 absolute top-0 -left-10 w-50 bg-white shadow-2xl rounded-xl p-4 transition-transform duration-300 ease-in-out
         ${isOpen ? "translate-x-10" : "-translate-x-full"}`}
       >
         {/* Close */}

@@ -3,6 +3,7 @@ import Header from "../components/header";
 import Hero from "../components/hero"
 import Banner from "../components/banner";
 import Services from "@/components/services";
+import AboutMe from "@/components/aboutMe";
 
 export default function Home() {
   return (
@@ -16,9 +17,15 @@ export default function Home() {
             </div>
           </section>
 
-          <section className="h-[200vh] w-full flex md:px-12 px-4">
+          <section className="md:h-[190vh] h-[150vh] w-full flex flex-col md:px-12 px-4">
             <Services />
           </section>
+
+          <section className="h-[130vh] w-full flex flex-col md:px-12 px-4">
+            <AboutMe />
+          </section>
+
+
       </main>
   );
 }

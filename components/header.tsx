@@ -9,7 +9,7 @@ const contacts = ['github.png', 'linkedin.png', 'twitter.png']
 export default function Header() {
 
     return (
-        <header className="w-full z-10 flex items-center justify-between mt-6 Outfit-Regular text-md px-2 md:px-12">
+        <header className="w-full z-20 flex items-center justify-between mt-6 Outfit-Regular text-md px-2 md:px-12">
 
             <SideBar />
 
