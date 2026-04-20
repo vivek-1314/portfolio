@@ -21,7 +21,7 @@ export default function Home() {
             <Services />
           </section>
 
-          <section className="h-[130vh] w-full flex flex-col md:px-12 px-4">
+          <section className="h-[115vh] w-full flex flex-col md:px-12 px-4">
             <AboutMe />
           </section>
 

@@ -165,7 +165,7 @@ export default function FloatingTechStack() {
   return (
     <div
       ref={containerRef}
-      className="relative w-full h-[420px] overflow-hidden rounded-2xl"
+      className="relative w-full h-full overflow-hidden rounded-2xl"
     />
   );
 }
