@@ -2,25 +2,204 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  /* --foreground: #171717; */
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+html,
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  height: 100%;
+}
+
+@font-face {
+  font-family: 'Outfit-Thin';
+  src: url('/font/Outfit-Thin.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+.Outfit-Thin {
+  font-family: 'Outfit-Thin', sans-serif;
+}
+
+/* ExtraLight */
+@font-face {
+  font-family: 'Outfit-ExtraLight';
+  src: url('/font/Outfit-ExtraLight.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+.Outfit-ExtraLight {
+  font-family: 'Outfit-ExtraLight', sans-serif;
+}
+
+/* Light */
+@font-face {
+  font-family: 'Outfit-Light';
+  src: url('/font/Outfit-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+.Outfit-Light {
+  font-family: 'Outfit-Light', sans-serif;
+}
+
+/* Regular */
+@font-face {
+  font-family: 'Outfit-Regular';
+  src: url('/font/Outfit-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+.Outfit-Regular {
+  font-family: 'Outfit-Regular', sans-serif;
+}
+
+/* Medium */
+@font-face {
+  font-family: 'Outfit-Medium';
+  src: url('/font/Outfit-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+.Outfit-Medium {
+  font-family: 'Outfit-Medium', sans-serif;
+}
+
+/* SemiBold */
+@font-face {
+  font-family: 'Outfit-SemiBold';
+  src: url('/font/Outfit-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+.Outfit-SemiBold {
+  font-family: 'Outfit-SemiBold', sans-serif;
+}
+
+/* Bold */
+@font-face {
+  font-family: 'Outfit-Bold';
+  src: url('/font/Outfit-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+.Outfit-Bold {
+  font-family: 'Outfit-Bold', sans-serif;
+}
+
+/* Black */
+@font-face {
+  font-family: 'Outfit-Black';
+  src: url('/font/Outfit-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+.Outfit-Black {
+  font-family: 'Outfit-Black', sans-serif;
+}
+
+@font-face {
+  font-family: 'Anurati-Regular';
+  src: url('/font/Anurati-Regular.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+.Anurati-Regular {
+  font-family: 'Anurati-Regular', sans-serif;
+}
+
+@font-face {
+  font-family: 'BebasNeue-Regular';
+  src: url('/font/BebasNeue-Regular.ttf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+.BebasNeue-Regular {
+  font-family: 'BebasNeue-Regular', sans-serif;
+}
+
+.gradient-text {
+  background: linear-gradient(
+    180deg,
+    rgba(243, 246, 250, 1) 19%,
+    rgba(197, 204, 215, 1) 73%
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-bg {
+  background: linear-gradient(
+    180deg,
+    #FF5738 7%,
+    #ff774d 31%,
+    #c5ccd7 83%
+  );
+}  
+
+@font-face {
+  font-family: 'MySignatureFont';
+  src: url('/font/DancingScript-Medium.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.signature {
+  font-family: 'MySignatureFont', cursive;
+  color: #8541e7;
+
+  /* 🔥 extreme right slant */
+  transform: skew(-32deg) rotate(-4deg);
+
+  /* makes it feel handwritten, not typed */
+  letter-spacing: 2px;
+  line-height: 1;
+
+  /* removes sharp digital feel */
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+
+  /* slight ink softness */
+  filter: blur(0.2px);
+}
+
+@font-face {
+  font-family: 'inter-bold';
+  src: url('/font/Inter_24pt-SemiBold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'inter-extrabold';
+  src: url('/font/Inter_24pt-ExtraBold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'inter-regular';
+  src: url('/font/Inter_18pt-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'mont-bold';
+  src: url('/font/Montserrat-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'mont-med';
+  src: url('/font/Montserrat-Medium.ttf') format('truetype');
 }
