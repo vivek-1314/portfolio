@@ -53,7 +53,7 @@ export default function AboutMe() {
                 <section className="w-1/2 h-full "></section>
             </div>
 
-            <div className="absolute md:top-1/2 opacity-30 md:opacity-100 transform md:-translate-y-1/2 md:h-[80%] md:w-1/2 w-full h-[50%] md:right-0 left-1/2 md:-translate-x-0 -translate-x-1/2  top-40">
+            <div className="absolute md:top-1/2 opacity-30 md:opacity-100  transform md:-translate-y-1/2 md:h-[80%] md:w-1/2 w-full h-[50%] md:right-0 left-1/2 md:-translate-x-0 -translate-x-1/2  top-40">
                  <FloatingTechStack />
             </div>
 

@@ -4,6 +4,7 @@ import Hero from "../components/hero"
 import Banner from "../components/banner";
 import Services from "@/components/services";
 import AboutMe from "@/components/aboutMe";
+import Projects from "@/components/projects";
 
 export default function Home() {
   return (
@@ -25,6 +26,7 @@ export default function Home() {
             <AboutMe />
           </section>
 
+          <Projects />
 
       </main>
   );
