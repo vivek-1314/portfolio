@@ -9,7 +9,7 @@ import Projects from "@/components/projects";
 export default function Home() {
   return (
       <main className="bg-[#c5ccd7] w-screen flex flex-col">
-          <section className="md:h-screen h-[90vh] flex flex-col ">
+          <section className="md:h-screen h-screen flex flex-col ">
             <Header />
             <Hero />
             <Banner />

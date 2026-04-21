@@ -21,7 +21,7 @@ const data = [
   {
     title: "multi agent system",
     description:
-      "An orchestrated AI pipeline where multiple specialized agents collaborate, delegate tasks, and deliver intelligent end-to-end automation.",
+      "An orchestrated AI pipeline where multiple specialized agents collaborate, delegate tasks, and deliver intelligent end-to-end automation to design a frontend only website from prompt.",
     image: "/images/Mockup6.png",
   },
 ];
