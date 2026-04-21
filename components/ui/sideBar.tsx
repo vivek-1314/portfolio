@@ -18,8 +18,6 @@ export default function SideBar() {
       
       {/* Toggle Button */}
       <button
-        onTouchStart={() => alert("touched!")}
-        onClick={() => { setIsOpen(!isOpen); alert("clicked!"); }}
         className="h-10 w-10 bg-gray-200 rounded-lg flex items-center justify-center shadow-2xl"
       >
         ☰

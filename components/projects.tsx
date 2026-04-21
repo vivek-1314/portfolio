@@ -1,25 +1,30 @@
 
-const data = [{
+const data = [
+  {
     title: "Ui Design",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    description:
+      "A pure UI art piece — crafted to push the boundaries of motion design with animation-heavy layouts and immersive visual storytelling.",
     image: "/images/Mockup.png",
-},
-{
+  },
+  {
     title: "product Website",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    description:
+      "Orion's waitlist landing page — built for a seamless, premium experience where users explore product details while securing their spot.",
     image: "/images/Mockup3.png",
-} 
-,
-{    title: "Project 3",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    image: "/images/Mockup2.png",
-},
-{
-    title: "Leetx",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    image: "/images/Mockup4.png",
-}
-]
+  },
+  {
+    title: "Nodex",
+    description:
+      "A full-stack networking app where professionals share ideas as nodes, build connections, and discover profiles through smart search.",
+    image: "/images/Mockup7.png",
+  },
+  {
+    title: "multi agent system",
+    description:
+      "An orchestrated AI pipeline where multiple specialized agents collaborate, delegate tasks, and deliver intelligent end-to-end automation.",
+    image: "/images/Mockup6.png",
+  },
+];
 
 export default function Projects() {    
     return (
@@ -31,16 +36,37 @@ export default function Projects() {
             <section className="grid md:grid-cols-2 grid-cols-1 md:gap-8 gap-3 -mt-8 z-10 justify-items-center">
                 {
                     data.map((item, index) => (
-                        <div className="md:w-[25rem] md:h-[25rem] w-[20rem] h-[20rem] overflow-hidden rounded-lg shadow-md  bg-cover bg-center bg-no-repeat flex flex-col-reverse p-4"
-                        style={{ backgroundImage: `url(${item.image})` }}>
-                            <section className="flex gap-2">
-                                <div className={`w-40 h-10 ${index == 3 ? "bg-[#010100]" : "bg-white"} rounded-full font-[inter-bold] text-sm flex items-center justify-center capitalize`}>
-                                    <span className={`${index==3 ? "text-white" : "text-black"}`}>{item.title}</span>
-                                </div>
-                                <div className={`w-10 h-10 ${index == 3 ? "bg-[#010100] px-2" : "bg-white px-3"} rounded-full flex items-center justify-center`}>
-                                    <img src={index == 3 ? "/images/arrow.png" : "/images/right-arrow.png"} className="-rotate-40 hover:rotate-0 transition-all duration-300 " alt="" />
-                                </div>
-                            </section>
+                    <div
+                        className="md:w-[25rem] md:h-[25rem] w-[20rem] h-[20rem] overflow-hidden rounded-lg shadow-md bg-cover bg-center bg-no-repeat flex flex-col-reverse p-4 relative group"
+                        style={{ backgroundImage: `url(${item.image})` }}
+                        >
+                        {/* Blur + dark overlay on hover */}
+                        <div className="absolute inset-0 bg-black/0 backdrop-blur-none group-hover:bg-black/50 group-hover:backdrop-blur-[0.1rem] transition-all duration-400 rounded-lg" />
+
+                        {/* Description — fades in on hover */}
+                        <p className="absolute inset-0 flex items-start p-4 justify-center text-start max-w-[18rem] Outfit-Light text-white text-sm font-medium px-6 opacity-0 group-hover:opacity-100 transition-opacity duration-400 z-10 leading-relaxed">
+                            {item.description}
+                        </p>
+
+                        {/* Bottom pill + arrow — fades out on hover */}
+                        <section className="flex gap-2 relative z-10 group-hover:opacity-0 transition-opacity duration-300">
+                            <div
+                            className={`w-40 h-10 ${index === 3 ? "bg-[#010100]" : "bg-white"} rounded-full font-[inter-bold] text-sm flex items-center justify-center capitalize`}
+                            >
+                            <span className={`${index === 3 ? "text-white" : "text-black"}`}>
+                                {item.title}
+                            </span>
+                            </div>
+                            <div
+                            className={`w-10 h-10 ${index === 3 ? "bg-[#010100] px-2" : "bg-white px-3"} rounded-full flex items-center justify-center`}
+                            >
+                            <img
+                                src={index === 3 ? "/images/arrow.png" : "/images/right-arrow.png"}
+                                className="-rotate-40 hover:rotate-0 transition-all duration-300"
+                                alt=""
+                            />
+                            </div>
+                        </section>
                         </div>
                     ))
                 }
