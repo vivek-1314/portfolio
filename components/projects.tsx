@@ -7,16 +7,16 @@ export default function Projects() {
 
             <section className="grid md:grid-cols-2 grid-cols-1 md:gap-8 gap-3 -mt-8 z-10 justify-items-center">
                 <div className="bg-[#6424cd] md:w-[25rem] md:h-[25rem] w-[20rem] h-[20rem] overflow-hidden rounded-lg shadow-md">
-                    <img src="/images/mockup.png" className="w-full h-full" alt="" />
+                    <img src="/images/Mockup.png" className="w-full h-full" alt="" />
                 </div>
                 <div className="bg-[#6424cd] md:w-[25rem] md:h-[25rem] w-[20rem] h-[20rem] overflow-hidden rounded-lg shadow-md">
-                    <img src="/images/mockup3.png" className="w-full h-full" alt="" />
+                    <img src="/images/Mockup3.png" className="w-full h-full" alt="" />
                 </div>
                 <div className="bg-[#6424cd] md:w-[25rem] md:h-[25rem] w-[20rem] h-[20rem] overflow-hidden rounded-lg shadow-md">
-                    <img src="/images/mockup2.png" className="w-full h-full" alt="" />
+                    <img src="/images/Mockup2.png" className="w-full h-full" alt="" />
                 </div>
                 <div className="bg-[#6424cd] md:w-[25rem] md:h-[25rem] w-[20rem] h-[20rem] overflow-hidden rounded-lg shadow-md">
-                    <img src="/images/mockup4.png" className="w-full h-full" alt="" />
+                    <img src="/images/Mockup4.png" className="w-full h-full" alt="" />
                 </div>
             </section>
         </div>
