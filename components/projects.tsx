@@ -1,3 +1,8 @@
+'use client'
+
+import {motion} from "framer-motion";
+import { url } from "inspector";
+
 
 const data = [
   {
@@ -5,37 +10,46 @@ const data = [
     description:
       "A pure UI art piece — crafted to push the boundaries of motion design with animation-heavy layouts and immersive visual storytelling.",
     image: "/images/Mockup.png",
+    url: "https://ochi-nine-beta.vercel.app/"
   },
   {
     title: "product Website",
     description:
       "Orion's waitlist landing page — built for a seamless, premium experience where users explore product details while securing their spot.",
     image: "/images/Mockup3.png",
+    url: "https://orion-website-one.vercel.app/"
   },
   {
     title: "Nodex",
     description:
       "A full-stack networking app where professionals share ideas as nodes, build connections, and discover profiles through smart search.",
     image: "/images/Mockup7.png",
+    url: "https://nodex-1314.vercel.app"
   },
   {
     title: "multi agent system",
     description:
       "An orchestrated AI pipeline where multiple specialized agents collaborate, delegate tasks, and deliver intelligent end-to-end automation to design a frontend only website from prompt.",
     image: "/images/Mockup6.png",
+    url: "https://frontend-gen-agent-wzig.vercel.app/"
   },
 ];
 
 export default function Projects() {    
     return (
         <div className="md:px-12 px-4 w-full pb-10 flex flex-col items-center justify-start">
-            <h1 className="gradient-text z-10 md:z-0 h-40 w-full mt-2 leading-none px-12 flex items-center justify-center Outfit-Bold text-[3.6rem] md:text-[7rem]  uppercase">
+            <motion.h1
+              initial={{ opacity: 0, y: 80 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.8 }}
+              transition={{ duration: 0.8, ease: "easeOut" }} className="gradient-text z-10 md:z-0 h-40 w-full mt-2 leading-none px-12 flex items-center justify-center Outfit-Bold text-[3.6rem] md:text-[7rem]  uppercase">
                 Latest Portfolio
-            </h1>
+            </motion.h1>
 
             <section className="grid md:grid-cols-2 grid-cols-1 md:gap-8 gap-3 -mt-8 z-10 justify-items-center">
                 {
                     data.map((item, index) => (
+                    <a key={index} href={item.url} target="_blank" rel="noopener noreferrer">
                     <div
                         className="md:w-[25rem] md:h-[25rem] w-[20rem] h-[20rem] overflow-hidden rounded-lg shadow-md bg-cover bg-center bg-no-repeat flex flex-col-reverse p-4 relative group"
                         style={{ backgroundImage: `url(${item.image})` }}
@@ -67,7 +81,8 @@ export default function Projects() {
                             />
                             </div>
                         </section>
-                        </div>
+                    </div>
+                    </a>
                     ))
                 }
             </section>

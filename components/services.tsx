@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Imprima } from "next/font/google";
 import ServiceCmp from "./ui/serviceCmp";
+import { motion } from "framer-motion";
 
 const services = [
     {
@@ -28,9 +29,15 @@ export default function Services() {
     const [openIndex, setOpenIndex] = useState<number | null>(null);
 
     return (
-        <div className="w-full md:mt-40 mt-20 flex md:gap-20 gap-10 flex-col">
+        <div id="services" className="w-full md:mt-40 mt-20 flex md:gap-20 gap-10 flex-col">
             <section className="w-full flex items-end justify-between">
-                <span className="md:text-[8.2rem] text-[3rem] font-[inter-extrabold] leading-28 gradient-text scale-y-105 uppercase">service</span>
+                <motion.span
+                    initial={{ opacity: 0, y: 80 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.4 }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
+
+                className="md:text-[8.2rem] text-[3rem] font-[inter-extrabold] leading-28 gradient-text scale-y-105 uppercase">service</motion.span>
                 <section className="flex gap-2 items-end">
                     <span className="md:text-[1.2rem] text-[0.9rem] font-[inter-bold]">Services </span>
                     <div className="md:h-7 h-5 w-1 bg-[#f65f15]"></div>

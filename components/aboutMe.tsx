@@ -1,4 +1,6 @@
+'use client'
 import FloatingTechStack from "./ui/floatingDiv";
+import { motion } from "framer-motion";
 
 const data = [
   "B.Tech CSE undergrad & Full-Stack Developer",
@@ -39,7 +41,12 @@ export default function AboutMe() {
         <div className="md:relative md:h-140 h-60 mt-10 w-full md:flex md:flex-col flex-row">
             <div className="h-1/2 w-full flex md:border-b-0 border-b-2" >
                 <section className="w-1/2 h-full md:border-b-2 font-[inter-bold] leading-none flex flex-col items-start justify-center">
-                    <span className="text-[4rem] ">02</span>
+                    <motion.span
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true, amount: 0.8 }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
+                    className="text-[4rem] ">02</motion.span>
                     <span className="Outfit-Light">Years of Experience</span>
                 </section>    
                 <section className="w-1/2 h-full ">
@@ -47,13 +54,18 @@ export default function AboutMe() {
             </div>
             <div className="h-1/2 w-full flex ">
                 <section className="w-1/2 h-full  font-[inter-bold] leading-none flex flex-col items-start justify-center">
-                    <span className="text-[4rem] ">15+</span>
+                    <motion.span
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true, amount: 0.8 }}
+                        transition={{ duration: 0.8, ease: "easeOut" }}
+                        className="text-[4rem] ">15+</motion.span>
                     <span className=" Outfit-Light">Total Projects</span>
                 </section>    
                 <section className="w-1/2 h-full "></section>
             </div>
 
-            <div className="absolute md:top-1/2 opacity-30 md:opacity-100  transform md:-translate-y-1/2 md:h-[80%] md:w-1/2 w-full h-[50%] md:right-0 left-1/2 md:-translate-x-0 -translate-x-1/2  top-40">
+            <div className="absolute md:top-1/2 opacity-20 md:opacity-100  transform md:-translate-y-1/2 md:h-[80%] md:w-1/2 w-full h-[50%] md:right-0 left-1/2 md:-translate-x-0 -translate-x-1/2  top-40">
                  <FloatingTechStack />
             </div>
 
