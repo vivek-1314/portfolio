@@ -81,7 +81,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         />
       </head>
 
-      <body className="relative bg-black text-white antialiased">
+      <body className="relative antialiased">
         {children}
       </body>
     </html>
