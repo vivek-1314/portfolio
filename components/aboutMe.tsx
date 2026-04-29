@@ -69,9 +69,28 @@ export default function AboutMe() {
                  <FloatingTechStack />
             </div>
 
-            <div className="absolute md:top-1/2 left-1/2 transform -translate-x-1/2 md:-translate-y-1/2 md:h-80 md:w-80 h-30 w-80 rounded-full bg-[#fe956f] z-10"></div>
+            <div className="absolute md:top-1/2 left-1/2 transform -translate-x-1/2 md:-translate-y-1/2 md:h-80 md:w-80 h-30 w-80 rounded-full bg-[#f1e0c4] z-10">
+                <a href="/vivek_resume.pdf" download>
+                        <span className="md:text-[0.7em] text-[0.5rem] font-bold uppercase Outfit-Light text-text text-center absolute transform top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20">download my <br /> cv</span>
+                        <motion.div
+                        className="absolute cursor-pointer group md:h-30 md:w-30 h-18 w-18 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                        animate={{ rotate: 360 }}
+                        transition={{
+                            repeat: Infinity,
+                            duration: 10,       // control speed (lower = faster)
+                            ease: "linear"     // IMPORTANT → constant speed
+                        }}
+                        >
+                        <div className="h-full w-full rounded-[0.4rem] bg-[#ddfa58] group-hover:bg-[#bed742] absolute"></div>
+                        <div className="h-full w-full rounded-[0.4rem] bg-[#ddfa58] group-hover:bg-[#bed742] rotate-[30deg] absolute"></div>
+                        <div className="h-full w-full rounded-[0.4rem] bg-[#ddfa58] group-hover:bg-[#bed742] absolute rotate-[60deg]"></div>
+                        <div className="h-full w-full rounded-[0.4rem] bg-[#ddfa58] group-hover:bg-[#bed742] absolute rotate-[90deg]"></div>
+                        <div className="h-full w-full rounded-[0.4rem] bg-[#ddfa58] group-hover:bg-[#bed742] absolute rotate-[120deg]"></div>
+                        </motion.div>
+                        <img src="images/arrow.png" className="absolute md:w-7 md:h-7 h-5 w-5 transform left-1/2 -translate-x-1/2 md:top-[11.5rem] top-[4.7rem] rotate-90" alt="" />
+                </a>
+            </div>
         </div>
-
     </div>
   );
 }

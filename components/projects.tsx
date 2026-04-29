@@ -37,7 +37,7 @@ const data = [
 
 export default function Projects() {    
     return (
-        <div className="md:px-12 px-4 w-full pb-10 flex flex-col items-center justify-start">
+        <div id="projects" className="md:px-12 px-4 w-full pb-10 flex flex-col items-center justify-start">
             <motion.h1
               initial={{ opacity: 0, y: 80 }}
               whileInView={{ opacity: 1, y: 0 }}

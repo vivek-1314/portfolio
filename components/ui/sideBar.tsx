@@ -5,9 +5,9 @@ import Link from "next/link";
 
 const header_buttons = [
   { title: "Home", link: "/" },
-  { title: "Product", link: "/Orion" },
-  { title: "Pricing", link: "/pricing" },
-  { title: "Community", link: "/community" }
+  { title: "Services", link: "#services" },
+  { title: "Projects", link: "#projects" },
+  { title: "Contact", link: "#contact" }
 ];
 
 export default function SideBar() {
@@ -18,6 +18,7 @@ export default function SideBar() {
       
       {/* Toggle Button */}
       <button
+        onClick={() => setIsOpen(prev => !prev)}
         className="h-10 w-10 bg-gray-200 rounded-lg flex items-center justify-center shadow-2xl"
       >
         ☰

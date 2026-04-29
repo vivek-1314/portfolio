@@ -23,8 +23,8 @@ export default function Home() {
           
           <div className="absolute gradient-bg h-[80vh] md:w-110 w-screen rounded-t-full top-50 left-1/2 transform -translate-x-1/2">
             <img 
-              className="w-100 aspect-auto absolute transform top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 mix-blend-multiply [mask-image:linear-gradient(to_bottom,black_70%,transparent_100%)]"
-              src="images/img.png" 
+              className="w-100 aspect-auto absolute transform top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 mix-blend-multiply [mask-image:linear-gradient(to_bottom,black_70%,transparent_10  0%)]"
+              src="images/img22.png" 
               alt=""
             />
           </div>
@@ -34,7 +34,7 @@ export default function Home() {
           <Services />
         </section>
 
-        <section className="h-[115vh] w-full flex flex-col md:px-12 px-4">
+        <section className="md:h-[115vh] h-[90vh] w-full flex flex-col md:px-12 px-4">
           <AboutMe />
         </section>
 
