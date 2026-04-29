@@ -1,82 +1,89 @@
-  import type { Metadata } from "next";
-  import { Geist, Geist_Mono } from "next/font/google";
-  import "./globals.css";
+'use client'
 
-  const geistSans = Geist({
-    variable: "--font-geist-sans",
-    subsets: ["latin"],
-  });
+import './globals.css'
+import { ReactNode, useMemo } from 'react'
 
-  const geistMono = Geist_Mono({
-    variable: "--font-geist-mono",
-    subsets: ["latin"],
-  });
-
-  export const metadata: Metadata = {
-    title: {
-      default: "Vivek | AI Product Engineer & Full Stack Developer",
-      template: "%s | Vivek",
-    },
-    description:
-      "Vivek is an AI Product Engineer specializing in agentic multi-agent systems, full-stack development, and intelligent workflows.",
-
-    keywords: [
-      "AI Product Engineer",
-      "Full Stack Developer",
-      "Next.js Developer",
-      "LangGraph",
-      "Multi-Agent Systems",
-      "LLM Engineer",
-      "AI Portfolio",
-      "Orion AI",
-    ],
-
-    authors: [{ name: "Vivek" }],
-    creator: "Vivek",
-
-    openGraph: {
-      title: "Vivek | AI Product Engineer",
-      description:
-        "Building agentic AI systems and intelligent workflows. Creator of Orion.",
-      url: "https://yourdomain.com",
-      siteName: "Vivek Portfolio",
-      images: [
-        {
-          url: "/og-image.png",
-          width: 1200,
-          height: 630,
-          alt: "Vivek Portfolio Preview",
-        },
+export default function RootLayout({ children }: { children: ReactNode }) {
+  const schemaData = useMemo(
+    () => ({
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Vivek Gaindhar",
+      "url": "https://portfoliovivek-eight.vercel.app/",
+      "sameAs": [
+        "https://github.com/vivek-1314",
+        "https://www.linkedin.com/in/vivekgaindhar/"
       ],
-      locale: "en_US",
-      type: "website",
-    },
+      "jobTitle": "Fullstack Developer & AI Engineer",
+      "description":
+        "Portfolio of Vivek Gaindhar, building real-world impact through software and AI innovation."
+    }),
+    []
+  )
 
-    twitter: {
-      card: "summary_large_image",
-      title: "Vivek | AI Product Engineer",
-      description:
-        "Building multi-agent AI systems and full-stack applications.",
-      images: ["/og-image.png"],
-    },
+  return (
+    <html lang="en">
+      <head>
+        {/* Core SEO */}
+        <title>Vivek Gaindhar | Fullstack Developer & AI Technologist</title>
 
-    robots: {
-      index: true,
-      follow: true,
-    },
-  };
+        <meta
+          name="description"
+          content="Portfolio of Vivek Gaindhar — fullstack developer building AI-powered real-world solutions."
+        />
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="author" content="Vivek Gaindhar" />
 
-  export default function RootLayout({
-    children,
-  }: Readonly<{
-    children: React.ReactNode;
-  }>) {
-    return (
-      <html
-        lang="en"
-        className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-      >
-        <body className="min-h-full flex flex-col">{children}</body>
-      </html>
-    );
-  }
+        {/* Open Graph */}
+        <meta property="og:title" content="Vivek Gaindhar | Portfolio" />
+        <meta
+          property="og:description"
+          content="AI + Engineering + Design. Explore projects built with real-world impact."
+        />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:url"
+          content="https://portfoliovivek-eight.vercel.app/"
+        />
+
+        {/* FIXED OG IMAGE (must be absolute) */}
+        <meta
+          property="og:image"
+          content="https://portfoliovivek-eight.vercel.app/images/og-2"
+        />
+
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+
+        {/* Canonical */}
+        <link
+          rel="canonical"
+          href="https://portfoliovivek-eight.vercel.app/"
+        />
+
+        {/* Google verification */}
+        <meta
+          name="google-site-verification"
+          content="H4dxpfXKyBbPYuVq_KUqJ5ev8zF-Dd-oTjqhTu3BaAg"
+        />
+
+        {/* FAVICON (FIXED - ROOT ONLY PATH) */}
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" href="/favicon.ico" />
+
+        {/* Structured Data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(schemaData)
+          }}
+        />
+      </head>
+
+      <body className="relative bg-black text-white antialiased">
+        {children}
+      </body>
+    </html>
+  )
+}
