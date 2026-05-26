@@ -42,8 +42,8 @@ export default function Projects() {
               initial={{ opacity: 0, y: 80 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.8 }}
-              transition={{ duration: 0.8, ease: "easeOut" }} className="gradient-text z-10 md:z-0 h-40 w-full mt-2 leading-none px-12 flex items-center justify-center Outfit-Bold text-[3.6rem] md:text-[7rem]  uppercase">
-                Latest Portfolio
+              transition={{ duration: 0.8, ease: "easeOut" }} className="gradient-text z-10 md:z-0 h-40 w-full mt-2 leading-none flex items-center justify-center Outfit-Bold text-[8vw] md:text-[8vw]  uppercase">
+                Latest Projects
             </motion.h1>
 
             <section className="grid md:grid-cols-2 grid-cols-1 md:gap-8 gap-3 -mt-8 z-10 justify-items-center">
